@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08090b">
+  <meta name="description" content="Compre o Lume Filter, da LUMEN.">
+  <title>Comprar | LUMEN — Lume Filter</title>
+  <link rel="stylesheet" href="css/compra.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="LUMEN página inicial">LUMEN<span>LUME FILTER</span></a>
+    <nav aria-label="Menu principal">
+      <a href="index.html#produto">Produto</a>
+        <a href="index.html#diferenciais">Diferenciais</a>
+        <a href="index.html#compras">Compras</a>
+        <a href="index.html#como-funciona">Como funciona</a>
+        <a class="nav-cta" href="#contato">Fale com a LUMEN ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="purchase-section">
+    <div class="container">
+      <p class="eyebrow section-kicker">LUMEN · LUME FILTER</p>
+      <div class="purchase-layout">
+        <section class="product-gallery" aria-label="Imagens do produto">
+          <div class="main-image">
+            <img src="img/Filter Lumen.jpg" alt="Lume Filter da LUMEN">
+            <span class="image-label">01 / LUME FILTER</span>
+          </div>
+          <div class="secondary-image">
+            <img src="img/Lumen Store.jpg" alt="Embalagem do Lume Filter da LUMEN">
+            <span class="image-label">02 / EMBALAGEM</span>
+          </div>
+          <p class="gallery-note">LUME FILTER <span>—</span> DESIGNED FOR MOBILE CREATORS</p>
+        </section>
+
+        <section class="purchase-panel" id="comprar">
+          <p class="eyebrow">LUMEN OPTICS / STORE</p>
+          <h1>Leve sua visão<br>para o <span>próximo nível.</span></h1>
+          <p class="intro">Preencha seus dados para continuar. Você seguirá para a plataforma de checkout para conferir as condições e finalizar seu pedido.</p>
+
+          <form id="purchase-form">
+            <div class="field">
+              <label for="nome">Nome completo</label>
+              <input id="nome" name="nome" type="text" placeholder="Seu nome" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="email">E-mail</label>
+              <input id="email" name="email" type="email" placeholder="voce@email.com" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="telefone">WhatsApp <span>(opcional)</span></label>
+              <input id="telefone" name="telefone" type="tel" placeholder="(00) 00000-0000" autocomplete="tel">
+            </div>
+            <label class="consent">
+              <input type="checkbox" id="consentimento" required>
+              <span>Concordo em utilizar os dados informados para dar continuidade ao atendimento e à compra.</span>
+            </label>
+            <button class="button button-primary" type="submit">CONTINUAR PARA A COMPRA <span>↗</span></button>
+            <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+            <p class="secure-note"><span>◇</span> A finalização do pedido acontece no checkout.</p>
+          </form>
+
+          <div class="direct-checkout">
+            <p>JÁ TEM TUDO EM MENTE?</p>
+            <a class="email-link" href="mailto:Lumen.filters@gmail.com" id="checkout-link">Ir direto para a plataforma de compra <span>→</span></a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+  <section class="bottom-line"><span>PRECISÃO</span><i></i><span>CONTROLE</span><i></i><span>CINEMA</span></section>
+</main>
+
+<footer><div class="container footer-inner"><a class="brand" href="index.html">LUMEN<span>LUME FILTER</span></a><p>© <span id="year"></span> LUMEN. Todos os direitos reservados.</p>
+<div class="footer-links"><a href="#produto">Produto</a><a href="#diferenciais">Diferenciais</a><a href="#contato">Contato</a></div></div></footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const form = document.getElementById('purchase-form');
+  const message = document.getElementById('form-message');
+  const checkout = document.getElementById('checkout-link');
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    const url = checkout.getAttribute('href');
+    if (!url || url === 'COLE_AQUI_O_LINK_DO_CHECKOUT') {
+      message.textContent = 'Adicione o link real do checkout no arquivo compra.html antes de publicar.';
+      message.classList.add('error');
+      return;
+    }
+    window.location.href = url;
+  });
+</script>
+</body>
+</html>

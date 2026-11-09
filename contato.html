@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08090b">
+  <meta name="description" content="LUMEN — Lume Filter. Explore novas possibilidades criativas para filmar com seu smartphone.">
+  <title>LUMEN — Lume Filter</title>
+  <link rel="stylesheet" href="css/contato.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html#inicio" aria-label="LUMEN página inicial">LUMEN<span>LUME FILTER</span></a>
+      <nav aria-label="Menu principal">
+        <a href="index.html#produto">Produto</a>
+        <a href="index.html#diferenciais">Diferenciais</a>
+        <a href="index.html#compras">Compras</a>
+        <a href="index.html#como-funciona">Como funciona</a>
+        <a class="nav-cta" href="#contato">Fale com a LUMEN ↗</a>
+      </nav>
+    </div>
+  </header>
+
+
+    <main><section class="contact-hero"><div class="hero-copy"><p class="eyebrow"><span></span> CENTRAL DE ATENDIMENTO</p><h1>Vamos conversar<span>.</span></h1><p class="intro">Tem alguma dúvida sobre o Lume Filter, quer saber mais sobre o produto ou conversar sobre uma parceria? Envie sua mensagem para a LUMEN.</p><div class="contact-note"><span class="note-icon">✦</span><div><strong>Estamos aqui para ajudar.</strong><p>Conte pra gente como podemos ajudar você.</p></div></div><a class="email-link" href="mailto:lumen.filters@gmail.com">lumen.filters@gmail.com ↗</a></div>
+    <section class="form-card" aria-labelledby="form-title"><div class="form-heading"><p class="eyebrow">FALE COM A LUMEN</p><h2 id="form-title">Envie sua mensagem</h2><p>Preencha os campos abaixo. Os campos com * são obrigatórios.</p></div>
+    <form id="contact-form"><div class="field-row"><div class="field"><label for="name">Seu nome <span>*</span></label><input id="name" name="name" type="text" placeholder="Como podemos chamar você?" autocomplete="name" required></div><div class="field"><label for="email">Seu e-mail <span>*</span></label><input id="email" name="email" type="email" placeholder="voce@exemplo.com" autocomplete="email" required></div></div>
+    <div class="field"><label for="subject">Assunto <span>*</span></label><select id="subject" name="subject" required><option value="" disabled selected>Selecione o assunto</option><option>Dúvidas sobre o Lume Filter</option><option>Informações sobre o produto</option><option>Suporte técnico</option><option>Parcerias e negócios</option><option>Outro assunto</option></select></div>
+    <div class="field"><label for="message">Sua mensagem <span>*</span></label><textarea id="message" name="message" rows="5" placeholder="Escreva sua dúvida ou mensagem aqui..." required></textarea></div><button class="submit-btn" type="submit">Preparar mensagem <span aria-hidden="true">↗</span></button><p class="form-footnote">Seu aplicativo de e-mail será aberto com a mensagem preparada para você revisar e enviar.</p><p class="form-status" id="form-status" role="status" aria-live="polite"></p></form></section></section></main>
+    <footer class="footer"><a class="footer-brand" href="index.html">LUMEN<span>.</span></a><p>Controle a luz. Expanda suas possibilidades.</p><span class="copyright">© <span id="year"></span> LUMEN. Todos os direitos reservados.</span></footer>
+    <script>
+const contactEmail = "lumen.filters@gmail.com";
+document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("contact-form").addEventListener("submit", function(event) {
+  event.preventDefault(); if (!this.reportValidity()) return;
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const subject = document.getElementById("subject").value;
+  const message = document.getElementById("message").value.trim();
+  const body = `Nome: ${name}\nE-mail para resposta: ${email}\n\nMensagem:\n${message}`;
+  document.getElementById("form-status").textContent = "Abrindo seu aplicativo de e-mail. Revise a mensagem e toque em enviar.";
+  window.location.href = `mailto:${contactEmail}?subject=${encodeURIComponent("[LUMEN] " + subject)}&body=${encodeURIComponent(body)}`;
+});
+</script></body></html>
+
+   
+  <footer><div class="container footer-inner"><a class="brand" href="index.html">LUMEN<span>LUME FILTER</span></a><p>© <span id="year"></span> LUMEN. Todos os direitos reservados.</p><div class="footer-links"><a href="#produto">Produto</a><a href="#diferenciais">Diferenciais</a><a href="#contato">Contato</a></div></div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
